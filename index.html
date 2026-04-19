@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hana Cho | Data Researcher</title>
-  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="favicon.png" type="image/png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -117,14 +117,17 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.95fr) minmax(260px, 0.75fr);
-      gap: 20px;
-      align-items: center;
+      grid-template-columns: minmax(0, 1.7fr) minmax(320px, 0.9fr);
+      gap: 34px;
+      align-items: stretch;
     }
 
     .hero-left {
-      max-width: 960px;
+      max-width: 980px;
       padding-right: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .eyebrow {
@@ -164,19 +167,29 @@
     }
 
     .name-sign {
-      margin-top: 28px;
-      font-family: "IBM Plex Sans", "Inter", sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--soft);
+      margin-top: 32px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      opacity: 0.85;
     }
 
     .hero-right {
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
+      gap: 48px;
+      height: 100%;
+      padding-left: 24px;
+      border-left: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .hero-logo {
@@ -186,11 +199,29 @@
       width: 100%;
     }
 
-
     .hero-logo img {
-      width: clamp(360px, 38vw, 620px);
+      width: clamp(280px, 26vw, 420px);
       opacity: 0.98;
       filter: brightness(1.05) contrast(1.04);
+    }
+
+    .hero-bottom {
+      padding-left: 8px;
+    }
+
+    .hero-bottom-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 42px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+
+    .hero-bottom-desc {
+      max-width: 280px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--muted);
     }
 
     .section {
@@ -397,7 +428,8 @@
     .ko .hero-desc,
     .ko .about-panel p,
     .ko .advisory-card p,
-    .ko .link-meta span {
+    .ko .link-meta span,
+    .ko .hero-bottom-desc {
       font-family: "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
       letter-spacing: -0.01em;
       word-break: keep-all;
@@ -425,11 +457,17 @@
       }
 
       .hero-right {
+        border-left: 0;
+        padding-left: 0;
         justify-content: flex-start;
       }
 
       .hero-logo img {
         width: clamp(220px, 40vw, 360px);
+      }
+
+      .hero-bottom {
+        padding-left: 0;
       }
     }
 
@@ -468,6 +506,10 @@
       .skills-floor {
         padding-bottom: 48px;
       }
+
+      .hero-bottom-title {
+        font-size: 34px;
+      }
     }
   </style>
 </head>
@@ -502,8 +544,17 @@
         </div>
 
         <div class="hero-right">
-          <div class="hero-logo">
-            <img src="oneinsight-logo.png" alt="OneInsight logo" />
+          <div class="hero-top">
+            <div class="hero-logo">
+              <img src="oneinsight-logo.png" alt="OneInsight logo" />
+            </div>
+          </div>
+
+          <div class="hero-bottom">
+            <div class="hero-bottom-title">AI + Data</div>
+            <div class="hero-bottom-desc">
+              Applied work in analytics, research, and practical implementation.
+            </div>
           </div>
         </div>
       </div>
@@ -696,8 +747,17 @@
         </div>
 
         <div class="hero-right">
-          <div class="hero-logo">
-            <img src="oneinsight-logo.png" alt="OneInsight logo" />
+          <div class="hero-top">
+            <div class="hero-logo">
+              <img src="oneinsight-logo.png" alt="OneInsight logo" />
+            </div>
+          </div>
+
+          <div class="hero-bottom">
+            <div class="hero-bottom-title">AI + Data</div>
+            <div class="hero-bottom-desc">
+              분석, 연구, 그리고 실제 적용을 연결하는 작업을 해왔습니다.
+            </div>
           </div>
         </div>
       </div>
