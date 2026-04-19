@@ -117,14 +117,14 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.85fr) minmax(280px, 0.8fr);
-      gap: 34px;
+      grid-template-columns: minmax(0, 1.9fr) minmax(220px, 0.7fr);
+      gap: 24px;
       align-items: center;
     }
 
     .hero-left {
-      max-width: 900px;
-      padding-right: 14px;
+      max-width: 940px;
+      padding-right: 10px;
     }
 
     .eyebrow {
@@ -139,7 +139,7 @@
 
     .intro-top {
       margin: 0 0 22px;
-      max-width: 760px;
+      max-width: 780px;
       font-size: 20px;
       line-height: 1.82;
       color: var(--muted);
@@ -148,7 +148,7 @@
     .hero-title {
       margin: 0;
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(68px, 11vw, 126px);
+      font-size: clamp(68px, 11vw, 128px);
       line-height: 0.9;
       font-weight: 600;
       letter-spacing: -0.05em;
@@ -157,7 +157,7 @@
 
     .hero-desc {
       margin: 32px 0 0;
-      max-width: 780px;
+      max-width: 800px;
       font-size: 20px;
       line-height: 1.92;
       color: #aab6c6;
@@ -175,36 +175,21 @@
 
     .hero-right {
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
     }
 
-    .logo-card {
-      width: 100%;
-      max-width: 340px;
-      padding: 24px;
-      border: 1px solid rgba(1, 158, 250, 0.16);
-      border-radius: var(--radius-xl);
-      background: linear-gradient(180deg, rgba(16, 22, 30, 0.95), rgba(10, 14, 19, 0.94));
-      box-shadow: var(--shadow);
-    }
-
-    .logo-frame {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      border-radius: 24px;
-      overflow: hidden;
+    .hero-logo {
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(1, 158, 250, 0.12);
+      width: 100%;
     }
 
-    .logo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .hero-logo img {
+      width: clamp(210px, 24vw, 370px);
+      opacity: 0.96;
+      filter: brightness(1.05) contrast(1.03);
     }
 
     .section {
@@ -227,7 +212,8 @@
 
     .about-panel,
     .links-panel,
-    .project-card {
+    .project-card,
+    .advisory-card {
       border: 1px solid var(--line);
       border-radius: var(--radius-xl);
       background: linear-gradient(180deg, rgba(18, 25, 34, 0.92), rgba(10, 14, 19, 0.92));
@@ -251,25 +237,29 @@
       margin-bottom: 0;
     }
 
-    .project-grid {
+    .project-grid,
+    .advisory-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
     }
 
-    .project-card {
+    .project-card,
+    .advisory-card {
       display: block;
       min-height: 180px;
       padding: 24px;
       transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
-    .project-card:hover {
+    .project-card:hover,
+    .advisory-card:hover {
       transform: translateY(-3px);
       border-color: rgba(1, 158, 250, 0.26);
     }
 
-    .project-index {
+    .project-index,
+    .advisory-index {
       margin: 0 0 12px;
       font-family: "IBM Plex Sans", "Inter", sans-serif;
       font-size: 12px;
@@ -279,12 +269,21 @@
       color: var(--soft);
     }
 
-    .project-card h3 {
+    .project-card h3,
+    .advisory-card h3 {
       margin: 0 0 12px;
       font-family: "Cormorant Garamond", serif;
       font-size: 32px;
       line-height: 1.1;
       font-weight: 600;
+      color: var(--text);
+    }
+
+    .advisory-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.85;
     }
 
     .project-link-placeholder {
@@ -396,6 +395,7 @@
     .ko .intro-top,
     .ko .hero-desc,
     .ko .about-panel p,
+    .ko .advisory-card p,
     .ko .link-meta span {
       font-family: "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
       letter-spacing: -0.01em;
@@ -405,7 +405,7 @@
     @media (max-width: 1080px) {
       .hero-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 28px;
       }
 
       .hero {
@@ -427,8 +427,8 @@
         justify-content: flex-start;
       }
 
-      .logo-card {
-        max-width: 320px;
+      .hero-logo img {
+        width: clamp(180px, 32vw, 300px);
       }
     }
 
@@ -454,12 +454,13 @@
       .about-panel,
       .links-panel,
       .project-card,
-      .logo-card {
+      .advisory-card {
         padding: 20px;
         border-radius: 20px;
       }
 
-      .project-grid {
+      .project-grid,
+      .advisory-grid {
         grid-template-columns: 1fr;
       }
 
@@ -500,10 +501,8 @@
         </div>
 
         <div class="hero-right">
-          <div class="logo-card">
-            <div class="logo-frame">
-              <img src="oneinsight-logo.png" alt="OneInsight logo" />
-            </div>
+          <div class="hero-logo">
+            <img src="oneinsight-logo.png" alt="OneInsight logo" />
           </div>
         </div>
       </div>
@@ -562,6 +561,48 @@
             <h3>Title 4</h3>
             <span class="project-link-placeholder">Link</span>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Teaching & Advisory</h2>
+        </div>
+
+        <div class="advisory-grid">
+          <div class="advisory-card">
+            <p class="advisory-index">Work 01</p>
+            <h3>AI Advisory & Executive Consulting</h3>
+            <p>
+              Delivered AI tool adoption and workflow automation education for Data Spring Korea, alongside C-level consulting focused on practical business application.
+            </p>
+          </div>
+
+          <div class="advisory-card">
+            <p class="advisory-index">Work 02</p>
+            <h3>AI & Data Education</h3>
+            <p>
+              Designed and delivered hands-on education in Python, machine learning, and data analysis, with mentoring, code feedback, and learner support tied to real skill development and career transition.
+            </p>
+          </div>
+
+          <div class="advisory-card">
+            <p class="advisory-index">Work 03</p>
+            <h3>Public Lecture</h3>
+            <p>
+              Delivered public lectures on AI-assisted data analysis, including “Data Analysis in 10 Minutes with ChatGPT” reaching 700+ participants across professional audiences.
+            </p>
+          </div>
+
+          <div class="advisory-card">
+            <p class="advisory-index">Work 04</p>
+            <h3>Instruction & Mentoring</h3>
+            <p>
+              Supported learners through live coding, project feedback, model evaluation, and technical coaching designed to move from fundamentals toward practical implementation.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -637,7 +678,7 @@
           <p class="eyebrow">DATA RESEARCHER · SEOUL, KR</p>
 
           <p class="intro-top">
-            저는 사람들이 데이터와 AI를 이해하도록 돕습니다. 단순히 How they work가 아니라, 무엇을 가능하게 하는지까지 연결해서 설명합니다.
+            저는 사람들이 데이터와 AI를 이해하도록 돕습니다. 단순히 어떻게 작동하는지를 설명하는 데서 그치지 않고, 그것이 무엇을 가능하게 하는지까지 함께 보여줍니다.
           </p>
 
           <h1 class="hero-title">
@@ -647,17 +688,15 @@
           </h1>
 
           <p class="hero-desc">
-            제 일은 연구, 분석과 응용 AI를 연결해 복잡한 내용을 더 명확하고 실현 가능하게 만들고, 실제 액션으로 이어지도록 돕는 것입니다.
+            제 일은 연구와 분석, 그리고 응용 AI를 연결해 복잡한 내용을 더 명확하고 실현 가능한 형태로 바꾸고, 그것이 실제 행동으로 이어지도록 돕는 것입니다.
           </p>
 
           <p class="name-sign">Hana Cho</p>
         </div>
 
         <div class="hero-right">
-          <div class="logo-card">
-            <div class="logo-frame">
-              <img src="oneinsight-logo.png" alt="OneInsight logo" />
-            </div>
+          <div class="hero-logo">
+            <img src="oneinsight-logo.png" alt="OneInsight logo" />
           </div>
         </div>
       </div>
@@ -671,16 +710,16 @@
 
         <div class="about-panel">
           <p>
-            11년간의 수학 교육 경험과 프로그래밍에 대한 경험을 바탕으로, 빅데이터와 AI 영역으로 커리어를 확장해 왔습니다.
+            11년간의 수학 교육 경험과 프로그래밍에 대한 관심을 바탕으로, 빅데이터와 AI 분야로 커리어를 넓혀 왔습니다.
           </p>
           <p>
-            현재는 AI 엔지니어링 강사이자 데이터 인사이트 컨설턴트로서, 머신러닝 교육, Generative AI, 그리고 현업 적용 가능한 AI use case를 중심으로 일하고 있습니다.
+            현재는 AI 엔지니어링 강사이자 데이터 인사이트 컨설턴트로서, 머신러닝 교육과 생성형 AI, 그리고 현업에 적용 가능한 AI 활용 방안을 중심으로 일하고 있습니다.
           </p>
           <p>
-            제 강점은 기술과 연구 그리고 사람을 연결하는 데 있습니다. 사람들이 기술적인 개념을 이해한 뒤 실제 활용할 수 있는 시스템을 구축해 비즈니스 결정으로 바꾸는 일을 돕거나 실행합니다.
+            제 강점은 기술과 연구, 그리고 사람을 연결하는 데 있습니다. 기술적인 개념을 이해하기 쉬운 언어와 구조로 바꾸고, 그것이 실제 업무와 의사결정에 활용되도록 돕는 일을 하고 있습니다.
           </p>
           <p>
-            Airbnb, 물류 스타트업, AI와 데이터 부트캠프를 경험하면서 더 분명해진 생각은 하나입니다. 데이터는 단지 기계를 위한 것이 아니라, 명확성을 통한 세상에 대한 이해 그리고 실제 액션을 원하는 사람들을 위한 도구라는 점입니다.
+            Airbnb, 물류 스타트업, AI·데이터 부트캠프를 경험하면서 더 분명해진 생각은 하나입니다. 데이터는 단지 기계를 위한 것이 아니라, 세상을 더 명확하게 이해하고 실제 행동으로 옮기고자 하는 사람들을 위한 도구라는 점입니다.
           </p>
         </div>
       </div>
@@ -723,6 +762,48 @@
     <section class="section">
       <div class="container">
         <div class="section-head">
+          <h2 class="section-title">강의 및 자문</h2>
+        </div>
+
+        <div class="advisory-grid">
+          <div class="advisory-card">
+            <p class="advisory-index">Work 01</p>
+            <h3>AI 도구 활용 및 경영 자문</h3>
+            <p>
+              데이터 스프링 코리아에서 AI 도구 활용과 업무 자동화 교육을 진행했으며, C레벨을 대상으로 실제 업무 적용을 중심으로 한 자문을 수행했습니다.
+            </p>
+          </div>
+
+          <div class="advisory-card">
+            <p class="advisory-index">Work 02</p>
+            <h3>AI·데이터 교육</h3>
+            <p>
+              파이썬, 머신러닝, 데이터 분석 교육을 설계하고 운영했으며, 멘토링과 코드 피드백을 통해 학습이 실질적인 역량 향상과 진로 전환으로 이어지도록 지원했습니다.
+            </p>
+          </div>
+
+          <div class="advisory-card">
+            <p class="advisory-index">Work 03</p>
+            <h3>공개 강연</h3>
+            <p>
+              ‘ChatGPT로 10분만에 끝내는 데이터 분석’ 강연을 포함해, 현업 관계자를 대상으로 데이터 분석과 AI 활용 강연을 진행했으며 누적 수강생은 700명을 넘었습니다.
+            </p>
+          </div>
+
+          <div class="advisory-card">
+            <p class="advisory-index">Work 04</p>
+            <h3>실습 지도 및 멘토링</h3>
+            <p>
+              라이브 코딩, 프로젝트 피드백, 모델 평가, 기술 코칭을 통해 기초 학습이 실제 적용으로 이어지도록 돕는 역할을 해왔습니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
           <h2 class="section-title">Links</h2>
         </div>
 
@@ -733,7 +814,7 @@
                 <span class="emoji">💼</span>
                 <div class="link-meta">
                   <strong>LinkedIn</strong>
-                  <span>경력 및 Professional profile</span>
+                  <span>경력과 주요 이력을 볼 수 있는 프로필입니다.</span>
                 </div>
               </div>
               <span>Open ↗</span>
@@ -744,7 +825,7 @@
                 <span class="emoji">💻</span>
                 <div class="link-meta">
                   <strong>GitHub</strong>
-                  <span>repositories, experiments, project archive</span>
+                  <span>프로젝트와 실험 기록을 모아둔 저장소입니다.</span>
                 </div>
               </div>
               <span>Open ↗</span>
@@ -778,7 +859,7 @@
 
     <footer>
       <div class="container">
-        clarity와 trust를 담아 work를 보여주는 portfolio page.
+        명확한 이해와 신뢰를 바탕으로 작업을 보여주는 포트폴리오 페이지.
       </div>
     </footer>
   </main>
